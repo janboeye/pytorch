@@ -370,7 +370,7 @@ class TestTorchAutocast(TestCase):
 @unittest.skipIf(not torch.backends.mps.is_available(), "requires mps")
 class TestAutocastMPS(TestCase):
     def test_cast_cache_is_global(self):
-
+        torch.set_autocast_cache_enabled(False)
         data = torch.randn(2, 3).to('mps')
         weight = torch.nn.Parameter(torch.randn(4, 3).to('mps'))
 
