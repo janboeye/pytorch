@@ -773,7 +773,7 @@ cmake_dependent_option(
   "USE_CUDA" OFF)
 
 if(DEBUG_CUDA)
-  string(APPEND CMAKE_CUDA_FLAGS_DEBUG " -lineinfo")
+  string(APPEND CMAKE_CUDA_FLAGS_DEBUG "-G -lineinfo")
   string(APPEND CMAKE_CUDA_FLAGS_RELWITHDEBINFO " -lineinfo")
   # CUDA-12.1 crashes when trying to compile with --source-in-ptx
   # See https://github.com/pytorch/pytorch/issues/102372#issuecomment-1572526893
